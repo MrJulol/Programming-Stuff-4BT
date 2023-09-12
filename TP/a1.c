@@ -61,11 +61,23 @@ int main()
     else
     {
         signal(SIGUSR2, parentresponse);
-        char *idk = "test";
+
+        time_t mytime = time(NULL);
         for (int i = 0; i < secs; i++)
         {
+            char seknumber[2];
+            seknumber[0] = (char)i;
+            char *time_str = ctime(&mytime);
+            time_str[strlen(time_str) - 1] = '\0';
+            strcat(time_str, ":____\0");
+            // strcat(time_str, seknumber[0]);
+            strcat(time_str, " Sekunde: ");
+            for (int j = 0; j <= i; j++)
+            {
+                strcat(time_str, ".");
+            }
             close(fd[0]);
-            write(fd[1], &idk, sizeof(char *));
+            write(fd[1], &time_str, sizeof(char *));
             sleep(1);
         }
         kill(pid, SIGUSR1);
