@@ -1,7 +1,9 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class main {
+public class Erste_Übungen {
+    static int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
 
@@ -38,58 +40,65 @@ public class main {
 
         // }
 
-        int numbers[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        for (int i = 0; i < 10; i++) {
-            numbers[i] = getNumber();
-        }
+        // !A5
+        // research return of int arr[]
+        // int numbers[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        // numbers = getNumber(numbers);
+        // for (int i = 0; i < numbers.length; i++) {
+        // System.out.print(numbers[i]);
+        // }
+        // System.out.print("\n");
 
+        // !A5 global
+        printNumbersGlobal();
         reader.close();
     }
 
-    public static int getNumber() {
+    public static int[] getNumber(int number[]) {
         Random rand = new Random();
-        int number = rand.nextInt(50);
+        for (int i = 0; i < 10; i++) {
+            number[i] = rand.nextInt(10);
+        }
         return number;
+
+    }
+
+    public static void printNumbersGlobal() {
+        Random rand = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(10);
+            System.out.print(arr[i]);
+        }
+        System.out.print("\n");
     }
 
     public static String Which_Month(int month) {
         switch (month) {
             case 1:
                 return "January";
-                break;
             case 2:
-                System.out.println("February");
-                break;
+                return "February";
             case 3:
-                System.out.println("March");
-                break;
+                return "March";
             case 4:
-                System.out.println("April");
-                break;
+                return "April";
             case 5:
-                System.out.println("May");
-                break;
+                return "May";
             case 6:
-                System.out.println("June");
-                break;
+                return "June";
             case 7:
-                System.out.println("July");
-                break;
+                return "July";
             case 8:
-                System.out.println("August");
-                break;
+                return "August";
             case 9:
-                System.out.println("September");
-                break;
+                return "September";
             case 10:
-                System.out.println("October");
-                break;
+                return "October";
             case 11:
-                System.out.println("November");
-                break;
+                return "November";
             case 12:
-                System.out.println("December");
-                break;
+                return "December";
         }
+        return "Not a month";
     }
 }

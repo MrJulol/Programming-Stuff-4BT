@@ -7,18 +7,13 @@
 #include <string.h>
 #include <signal.h>
 
-int loop1 = 1;
 int loop2 = 1;
 int secs = 10;
-int parentloop = 0;
 
 void pauseloop()
 {
     loop2 = 0;
-}
-void parentresponse()
-{
-    parentloop = 1;
+    printf("YESSSSS");
 }
 
 int main()
@@ -51,37 +46,41 @@ int main()
             while (loop2)
             {
             }
-            char *buff;
-            read(fd[0], buff, sizeof(char *));
+            char *buff = malloc(100 * sizeof(char));
+            read(fd[0], &buff, sizeof(char *));
             printf("%s\n", buff);
             loop2 = 1;
         }
     }
     else
     {
-        char buff[100];
-        signal(SIGUSR1, parentresponse);
-
         time_t mytime;
 
         char seknumber[2];
         for (int i = 0; i < secs; i++)
         {
             mytime = time(NULL);
+
             seknumber[0] = (char)i;
             seknumber[1] = '\0';
-            char *time_str = ctime(&mytime);
+            char *time_str = malloc(100 * sizeof(char));
+            time_str = ctime(&mytime);
             time_str[strlen(time_str) - 1] = '\0';
+
             strcat(time_str, ":____\0");
             strcat(time_str, seknumber);
             strcat(time_str, " Sekunde: \0");
+
             for (int j = 0; j <= i; j++)
             {
                 strcat(time_str, ".");
             }
+
             strcat(time_str, "\n");
+
             write(fd[1], time_str, sizeof(time_str) + 1);
             kill(pid, SIGUSR2);
+
             sleep(1);
         }
         kill(pid, SIGQUIT);
