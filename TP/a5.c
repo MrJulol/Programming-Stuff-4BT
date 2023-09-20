@@ -61,16 +61,19 @@ int main()
     if (pipe(fd1) < 0) // Error during Pipe creation
     {
         perror("Pipe1: ");
+        raise(SIGTERM);
     }
     if (pipe(fd2) < 0) // Error during Pipe creation
     {
         perror("Pipe1: ");
+        raise(SIGTERM);
     }
 
     pid = fork();
     if (pid < 0)
     {
         perror("Child creation");
+        raise(SIGTERM);
     }
     if (!pid)
     {
