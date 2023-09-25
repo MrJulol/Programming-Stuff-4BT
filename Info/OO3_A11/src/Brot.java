@@ -6,7 +6,7 @@ public class Brot {
         this.farbe = farbe;
         this.gewicht = gewicht;
     }
-    public Brot(final Wein wine) {{{{{
+    public Brot(final Wein wine) {
         this.farbe = wine.getFarbe();
         this.gewicht = getGewicht() * 3;
     }

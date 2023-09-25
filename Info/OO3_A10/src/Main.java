@@ -7,7 +7,7 @@ public class Main {
         obi.setProducts();
         notObi.setProducts();
 
-        while(a.kaufe(obi.products[0], obi)){
+        while(a.kaufe(obi.getProduct(0), obi)){
 
         }
         System.out.println("no money, Bye life");
