@@ -4,8 +4,11 @@ public class Baumarkt {
 
     private double profit;
 
-    private Produkt[] products = new Produkt[5];
+    private final Produkt[] products = new Produkt[5];
 
+    public Produkt[] getProducts() {
+        return products;
+    }
 
     public Produkt getProduct(int i) {
         return products[i];
@@ -27,14 +30,12 @@ public class Baumarkt {
         this.profit = profit;
     }
 
-    public Baumarkt(String name, double profit) {
-        this.name = name;
-        this.profit = profit;
+    public Baumarkt() {
+        this.profit = 0;
 
         for (int i = 0; i < 5; i++) {
             products[i] = new Produkt();
         }
-
     }
 
     public void setProducts() {
@@ -49,6 +50,12 @@ public class Baumarkt {
         this.products[2].setPrice(3.3);
         this.products[3].setPrice(4.4);
         this.products[4].setPrice(5.5);
+    }
+    public void setProductsSingle(String name, int price, int i){
+        this.products[i].setName(name);
+        this.products[i].setPrice(price);
+
+
     }
 
 

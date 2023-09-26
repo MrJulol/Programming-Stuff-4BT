@@ -1,4 +1,4 @@
-public class Displays {
+public class Prints {
 
     public String thankYou(){
         return "Thank you for Buying!";
@@ -36,5 +36,9 @@ public class Displays {
         for (int i = 0; i < 5; i++) {
             System.out.println("Product " + i + ": name = " + products[i].getName() + " ||Price = " + products[i].getPrice());
         }
+    }
+
+    public void clear() {
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
 }
