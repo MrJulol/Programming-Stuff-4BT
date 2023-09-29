@@ -6,7 +6,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         Baumarkt baumarkt = new Baumarkt();
-        Kunde kunde = new Kunde();
+        Client client = new Client();
 
         prints.showExpSwitch1();
         int choice = input.nextInt();
@@ -14,15 +14,15 @@ public class Main {
             case 1:
                 baumarkt.setName("obi");
                 baumarkt.setProducts();
-                kunde.setName("seppl");
-                kunde.setMoney(24);
+                client.setName("seppl");
+                client.setMoney(24);
                 break;
             case 2:
                 System.out.println("Baumarkt Name : " + prints.userInputString());
                 baumarkt.setName(input.next());
                 System.out.println("Kunde Name and Money: " + prints.userInputString() + prints.userInputInt());
-                kunde.setName(input.next());
-                kunde.setMoney(input.nextInt());
+                client.setName(input.next());
+                client.setMoney(input.nextInt());
                 setProducts(baumarkt, prints, input);
                 break;
             default:
@@ -34,22 +34,23 @@ public class Main {
         while (userInBuy == 1) {
             prints.BuyMenu(baumarkt.getProducts());
             System.out.println(prints.userInputInt());
-            kunde.kaufe(baumarkt.getProduct(input.nextInt()), baumarkt);
+            client.kaufe(baumarkt.getProduct(input.nextInt()), baumarkt);
 
             System.out.println(prints.buyQuestion());
             userInBuy = input.nextInt();
         }
         System.out.println(prints.thankYou());
 
+        prints.printStatistics(client, baumarkt);
     }
 
     private static void setProducts(Baumarkt baumarkt, Prints myDisplay, Scanner input) {
         for (int i = 0; i < 5; i++) {
-            myDisplay.setProductsNameQuestion();
+            System.out.println(myDisplay.setProductsNameQuestion());
             String name = input.next();
-            myDisplay.setProductsPriceQuestion();
+            System.out.println(myDisplay.setProductsPriceQuestion());
             int price = input.nextInt();
-            baumarkt.setProductsSingle(name, price , i);
+            baumarkt.setProductsSingle(name, price, i);
         }
     }
 

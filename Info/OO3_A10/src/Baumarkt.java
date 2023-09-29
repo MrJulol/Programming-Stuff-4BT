@@ -54,8 +54,6 @@ public class Baumarkt {
     public void setProductsSingle(String name, int price, int i){
         this.products[i].setName(name);
         this.products[i].setPrice(price);
-
-
     }
 
 

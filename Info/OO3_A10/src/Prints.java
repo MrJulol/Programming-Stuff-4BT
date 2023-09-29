@@ -1,6 +1,6 @@
 public class Prints {
 
-    public String thankYou(){
+    public String thankYou() {
         return "Thank you for Buying!";
     }
 
@@ -24,12 +24,12 @@ public class Prints {
         return "Enter a Word (String) ";
     }
 
-    public void setProductsNameQuestion() {
-        System.out.println("Enter the name of a product");
+    public String setProductsNameQuestion() {
+        return "Enter the name of a product";
     }
 
-    public void setProductsPriceQuestion() {
-        System.out.println("Enter the price of a product");
+    public String setProductsPriceQuestion() {
+        return "Enter the price of a product";
     }
 
     public void BuyMenu(Produkt[] products) {
@@ -40,5 +40,12 @@ public class Prints {
 
     public void clear() {
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    }
+
+    public void printStatistics(Client client, Baumarkt baumarkt) {
+        System.out.println("\nSome Statistics: ");
+        System.out.println("Client " + client.getName() + " still has " + client.getMoney() + "Money");
+        System.out.println("Baumarkt " + baumarkt.getName() + " has made " + baumarkt.getProfit() + " Money profit");
+
     }
 }
