@@ -1,4 +1,4 @@
-public class Kunde {
+public class Client {
     private String name;
 
     private double money;
@@ -26,4 +26,12 @@ public class Kunde {
         this.money = money;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public double getMoney() {
+        return money;
+    }
 }
