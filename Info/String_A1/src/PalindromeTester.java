@@ -18,7 +18,6 @@ public class PalindromeTester {
         string = stringBuilder.toString().toLowerCase();
         StringBuilder compare = new StringBuilder(string);
         System.out.println(string);
-
         return string.contentEquals(compare.reverse());
     }
 }
