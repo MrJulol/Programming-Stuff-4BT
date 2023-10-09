@@ -22,4 +22,7 @@ class car{
     public func setBaujahr(Baujahr: Int)  {
         self.Baujahr = Baujahr
     }
+    public func calcAge()->Int {
+        return 13
+    }
 }

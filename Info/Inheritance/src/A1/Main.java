@@ -8,5 +8,6 @@ public class Main {
         path.addPoint(p1);
         path.addPoint(p2);
         System.out.println(path.lenght());
+        System.out.println(path.getClass());
     }
 }
