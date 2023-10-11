@@ -82,7 +82,7 @@ int main()
         {
             signal(SIGUSR1, par_handler);
 
-            kill(getpid(), SIGUSR1);
+            raise(SIGUSR1);
 
             while (*mem < 100)
                 ;
