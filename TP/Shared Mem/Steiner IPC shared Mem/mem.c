@@ -13,20 +13,11 @@
 int *mem;
 pid_t pid;
 pid_t pid2;
-int loop = 1;
 
 void par_handler(int signal)
 {
     printf("PAR");
-    int memread = *mem;
-    if (memread == 100)
-    {
-        loop = 0;
-    }
-    else
-    {
-        printf("%d\n", memread);
-    }
+    printf("%d\n", *mem);
     printf("PAR1\n");
     kill(pid, SIGUSR2);
     printf("PAR2\n");
@@ -93,7 +84,7 @@ int main()
 
             raise(SIGUSR1);
 
-            while (loop)
+            while (*mem < 100)
                 ;
 
             if (shmdt(mem) == -1)
@@ -110,7 +101,7 @@ int main()
         else //! Child 2
         {
             signal(SIGUSR2, child2sigHandler);
-            while (loop)
+            while (*mem < 100)
                 ;
             if (shmdt(mem) == -1)
             {
@@ -123,7 +114,7 @@ int main()
     {
         signal(SIGUSR2, child1sigHandler);
 
-        while (loop)
+        while (*mem < 100)
             ;
         if (shmdt(mem) == -1)
         {
