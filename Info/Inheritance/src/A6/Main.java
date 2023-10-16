@@ -10,6 +10,7 @@ public class Main {
         iceMachine .on();
         iceMachine .on(); // test
         radio. off () ;
+
         System.out.println("Devices: " + ElectronicDevice.numberOfElectronicDevices); // 2
         System.out.println("SwitchedOn: " + ElectronicDevice.numberOfElectronicDevicesSwitchedOn); // 1
     }

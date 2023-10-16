@@ -14,15 +14,15 @@ public class ElectronicDevice{
     public void setOn(boolean on) {
         isOn = on;
     }
-
     public ElectronicDevice() {
-        this.off();
+        this.setOn(false);
         numberOfElectronicDevices++;
     }
-
     public void on(){
-        this.setOn(true);
-        numberOfElectronicDevicesSwitchedOn++;
+        if(!this.isOn()){
+            this.setOn(true);
+            numberOfElectronicDevicesSwitchedOn++;
+        }
     }
     public void off(){
         this.setOn(false);
@@ -30,7 +30,6 @@ public class ElectronicDevice{
             numberOfElectronicDevicesSwitchedOn--;
         }
     }
-
     @Override
     public String toString(){
         return "Device is " + (this.isOn() ? "on" : "off");
