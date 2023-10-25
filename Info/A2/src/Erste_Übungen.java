@@ -7,7 +7,7 @@ public class Erste_Übungen {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
 
-        // !A3
+        // !A1
         // System.out.println("Input Number1 :");
         // int num1 = reader.nextInt();
         // System.out.println("Input Number2 :");
