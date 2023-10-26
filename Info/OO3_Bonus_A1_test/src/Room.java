@@ -10,15 +10,6 @@ public class Room {
 
     private Boolean booked;
 
-    private int booked_by;
-
-    public int getBooked_by() {
-        return booked_by;
-    }
-
-    public void setBooked_by(int booked_by) {
-        this.booked_by = booked_by;
-    }
 
     public int getSize() {
         return size;
@@ -28,19 +19,8 @@ public class Room {
         return booked;
     }
 
-    public void setBooked(Boolean booked) {
-        this.booked = booked;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     public int getRoom_nr() {
         return room_nr;
     }
 
-    public void setRoom_nr(int room_nr) {
-        this.room_nr = room_nr;
-    }
 }
