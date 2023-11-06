@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Person {
+public class Person implements electable {
 
     private String name;
     private String wohnort;
@@ -12,6 +12,12 @@ public class Person {
         this.wohnort = wohnort;
         this.gender = gender;
         this.age = age;
+    }
+
+    public void goElect(Kandidat kandidat) {
+        if(isElectable()){
+            kandidat.
+        }
     }
 
     public String getWohnort() {
@@ -28,5 +34,10 @@ public class Person {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean isElectable() {
+        return this.getAge() >= 18 && Objects.equals(this.getWohnort(), "Südtriol");
     }
 }
