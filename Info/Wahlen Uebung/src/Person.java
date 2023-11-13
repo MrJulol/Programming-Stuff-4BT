@@ -16,7 +16,9 @@ public class Person implements electable {
 
     public void goElect(Kandidat kandidat) {
         if(isElectable()){
-            kandidat.
+            kandidat.elect();
+        } else{
+            System.out.println("Person can not elect");
         }
     }
 

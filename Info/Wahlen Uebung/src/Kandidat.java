@@ -8,11 +8,10 @@ public class Kandidat extends Person implements electable{
 
     public void MakePartOfPartei(Partei partei){
         this.isPartOf = partei;
-        partei.addKandidat(this);
     }
 
     public void elect(){
-        if(isElectable()){
+        if(isElectable() && this.isPartOf.calcQuote() >= 1/3){
             this.NOfVotes++;
             System.out.println(this.getName() + " wurde gewählt!");
         } else {
