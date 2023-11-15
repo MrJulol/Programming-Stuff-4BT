@@ -39,7 +39,6 @@ void *producerFunc(void *args)
     }
     return NULL;
 }
-
 int main()
 {
     srand((unsigned)time(NULL));
