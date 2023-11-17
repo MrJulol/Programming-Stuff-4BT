@@ -9,7 +9,6 @@ public class DataProcessor {
     }
 
     public static void processData(List<Object> data) throws DataProcessingException {
-
         for (Object object : data) {
             try {
                 processObject(object);
@@ -19,7 +18,6 @@ public class DataProcessor {
                 throw new DataProcessingException("Fehler bei der Verarbeitung des Datenobjects", e);
             }
         }
-
     }
 
     public static void processObject(Object object) {
