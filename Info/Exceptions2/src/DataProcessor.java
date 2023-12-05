@@ -25,7 +25,10 @@ public class DataProcessor {
             System.out.println("String: " + object);
         } else if (object instanceof Integer) {
             System.out.println("Integer: " + object);
-        } else {
+        }else if(object == null){
+            throw new NullPointerException("Nullpointer: " + object);
+        }
+        else {
             throw new IllegalArgumentException("Ungültiges Datenobjekt: " + object);
         }
     }
@@ -34,7 +37,7 @@ public class DataProcessor {
         List<Object> data = new ArrayList<>();
         data.add(10);
         data.add("Hello");
-        data.add(new DataProcessor());
+        data.add(null);
         processData(data);
     }
 }
