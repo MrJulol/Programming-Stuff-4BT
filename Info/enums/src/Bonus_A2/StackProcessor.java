@@ -7,4 +7,10 @@ public class StackProcessor<T> {
     public void pop(){
 
     }
+
+    public void processElements(){
+    }
+
+
+
 }

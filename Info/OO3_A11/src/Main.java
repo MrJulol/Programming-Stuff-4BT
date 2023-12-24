@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         Brot bread = new Brot("braun", 3.3);
+
         bread.print();
         Wein wine = new Wein("rot", 3.3, 15);
         wine.print();

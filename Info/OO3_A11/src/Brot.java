@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Brot {
     private String farbe;
     private double gewicht;
